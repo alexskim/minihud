@@ -186,6 +186,10 @@ public class GuiShapeEditor extends GuiRenderLayerEditBase
         this.addButton(button, (btn, mbtn) -> this.setPositionFromCamera(shape::setCenter));
         btnX = button.getX() + button.getWidth() + 4;
 
+        ButtonGeneric buttonSetXZ = new ButtonGeneric(btnX, y, -1, false, "malilib.gui.button.render_layers_gui.set_to_player");
+        this.addButton(buttonSetXZ, (btn, mbtn) -> this.setPositionFromCamera(shape::setXZ));
+        btnX = buttonSetXZ.getX() + buttonSetXZ.getWidth() + 4;
+
         this.configBlockSnap.setOptionListValue(shape.getBlockSnap());
         String label = StringUtils.translate("minihud.gui.label.shape.block_snap", shape.getBlockSnap().getDisplayName());
         int width = this.getStringWidth(label) + 10;

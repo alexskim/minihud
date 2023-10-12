@@ -58,6 +58,13 @@ public abstract class ShapeCircleBase extends ShapeBlocky
         this.updateEffectiveCenter();
     }
 
+    public void setXZ(Vec3d target)
+    {
+        this.center.x = target.x;
+        this.center.z = target.z;
+        this.updateEffectiveCenter();
+    }
+
     public double getRadius()
     {
         return this.radius;
